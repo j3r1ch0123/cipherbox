@@ -48,4 +48,6 @@ int main(void) {
     else {
         cout << "Please enter either 'e' or 'd' " << endl;
     }
+    
+    return 0;
 }
