@@ -1,4 +1,4 @@
-#include "cipherbox.h"
+#include "cipherbox"
 #include <iostream>
 #include <string>
 #include <fstream>
