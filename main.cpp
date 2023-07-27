@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 
+using namespace std;
 int main(void) {
     Cipherbox cipher;
     string password;
