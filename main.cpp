@@ -24,7 +24,7 @@ int main(void) {
         cin >> file;
 
         string outfile;
-        cout << "What would you like to save the encrypted file as? " << endl;
+        cout << "What would you like to save the encrypted file as? " << endl; // Be sure to use a different file name, it doesn't save over well for some reason
         cin >> outfile;
 
         cipher.encryptFile(file, outfile, key);
@@ -38,7 +38,7 @@ int main(void) {
         cin >> file;
         
         string outfile;
-        cout << "What would you like to save the decrypted file as? " << endl;
+        cout << "What would you like to save the decrypted file as? " << endl; // See above comment
         cin >> outfile;
 
         cipher.decryptFile(file, outfile, key);
