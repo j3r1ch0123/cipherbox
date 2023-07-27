@@ -1,4 +1,4 @@
-#include "cipherbox"
+#include "cipherbox.cpp"
 #include <iostream>
 #include <string>
 #include <fstream>
