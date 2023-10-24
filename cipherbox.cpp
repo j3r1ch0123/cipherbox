@@ -119,20 +119,11 @@ public:
     }
 
     string generateKey(const string& password) {
-        constexpr int SALT_SIZE = 16;
         constexpr int KEY_SIZE = 32;
         constexpr int PBKDF2_ITERATIONS = 10000;
 
-        // Generate a random salt
-        vector<unsigned char> salt(SALT_SIZE);
-        if (RAND_bytes(salt.data(), SALT_SIZE) != 1) {
-            cerr << "Error generating salt..." << endl;
-            return string();
-        }
-
-        // Perform PBKDF2 key derivation with the salt using SHA-256
         vector<unsigned char> key(KEY_SIZE);
-        PKCS5_PBKDF2_HMAC(password.c_str(), password.length(), salt.data(), salt.size(), PBKDF2_ITERATIONS, EVP_sha256(), KEY_SIZE, key.data());
+        PKCS5_PBKDF2_HMAC(password.c_str(), password.length(), NULL, 0, PBKDF2_ITERATIONS, EVP_sha256(), KEY_SIZE, key.data());
 
         // Convert the key to a hexadecimal string
         stringstream hexKeyStream;
@@ -140,12 +131,7 @@ public:
             hexKeyStream << hex << setfill('0') << setw(2) << static_cast<int>(byte);
         }
         string hexKey = hexKeyStream.str();
-
-        // Remove any newline characters from the Base64 encoded key
-        // Concatenate the salt and derived key and return as a single string
-        string result;
-        result.append(reinterpret_cast<const char*>(salt.data()), SALT_SIZE);
-        return result;
+        return hexKey;
     }
 
 
