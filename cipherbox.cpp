@@ -14,6 +14,7 @@
 #include <vector>
 #include <cstring>
 #include <algorithm>
+#include "cipherbox.h"
 using namespace std;
 
 class Cipherbox {
