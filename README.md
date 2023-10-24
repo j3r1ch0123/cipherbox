@@ -25,7 +25,7 @@ Here are some common use cases for Cipherbox:
 ### Generating RSA Key Pair
 
 ```cpp
-#include "cipherbox.cpp"
+#include "cipherbox.h"
 
 Cipherbox cipher;
 RSA* rsa_keypair = cipher.generateRSAKeys();
@@ -34,7 +34,7 @@ RSA* rsa_keypair = cipher.generateRSAKeys();
 ### Encrypting Data with RSA Public Key
 
 ```cpp
-#include "cipherbox.cpp"
+#include "cipherbox.h"
 
 Cipherbox cipher;
 RSA* rsa_public_key = // Load your RSA public key
@@ -47,7 +47,7 @@ std::vector<unsigned char> encrypted_data = cipher.encryptWithRSAPublicKey(rsa_p
 ### Decrypting Data with RSA Private Key
 
 ```cpp
-#include "cipherbox.cpp"
+#include "cipherbox.h"
 
 Cipherbox cipher;
 RSA* rsa_private_key = // Load your RSA private key
@@ -60,7 +60,7 @@ std::vector<unsigned char> decrypted_data = cipher.decryptWithRSAPrivateKey(rsa_
 ### Encrypting and Decrypting Files with AES
 
 ```cpp
-#include "cipherbox.cpp"
+#include "cipherbox.h"
 
 Cipherbox cipher;
 std::string key = // Your AES encryption key
