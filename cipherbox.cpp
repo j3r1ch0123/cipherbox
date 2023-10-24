@@ -143,17 +143,17 @@ vector<unsigned char> Cipherbox::generateIV() {
     return iv;
 }
 
-void Cipherbox::encryptFile(const string& inputFileName, const string& outputFileName, const string& key) {
+bool Cipherbox::encryptFile(const string& inputFileName, const string& outputFileName, const string& key) {
     ifstream inputFile(inputFileName, ios::binary);
     if (!inputFile) {
         cerr << "Error opening input file..." << endl;
-        return;
+        return false;
     }
 
     ofstream outputFile(outputFileName, ios::binary);
     if (!outputFile) {
         cerr << "Error opening output file..." << endl;
-        return;
+        return false;
     }
 
     AES_KEY aes_key;
@@ -184,19 +184,21 @@ void Cipherbox::encryptFile(const string& inputFileName, const string& outputFil
     inputFile.close();
     outputFile.close();
     cout << "Encryption Complete!!!" << endl;
+
+    return true;
 }
 
-void Cipherbox::decryptFile(const string& inputFileName, const string& outputFileName, const string& key) {
+bool Cipherbox::decryptFile(const string& inputFileName, const string& outputFileName, const string& key) {
     ifstream inputFile(inputFileName, ios::binary);
     if (!inputFile) {
         cerr << "Error opening input file..." << endl;
-        return;
+        return false;
     }
 
     ofstream outputFile(outputFileName, ios::binary);
     if (!outputFile) {
         cerr << "Error opening output file..." << endl;
-        return;
+        return false;
     }
 
     vector<unsigned char> iv(AES_BLOCK_SIZE);
@@ -238,5 +240,7 @@ void Cipherbox::decryptFile(const string& inputFileName, const string& outputFil
     inputFile.close();
     outputFile.close();
     cout << "Decryption Complete!!!" << endl;
+
+    return true;
 }
 
