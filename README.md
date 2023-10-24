@@ -5,8 +5,6 @@ The Cipherbox C++ Library is a collection of functions and classes that allow yo
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Reference](#api-reference)
-- [License](#license)
 
 ## Installation
 
