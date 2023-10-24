@@ -17,8 +17,8 @@ public:
     std::string pbkdf2(const std::string& password, const std::vector<unsigned char>& salt, int iterations, int keyLength);
     std::string generateKey(const std::string& password);
     std::vector<unsigned char> generateIV();
-    void encryptFile(const std::string& inputFileName, const std::string& outputFileName, const std::string& key);
-    void decryptFile(const std::string& inputFileName, const std::string& outputFileName, const std::string& key);
+    bool encryptFile(const std::string& inputFileName, const std::string& outputFileName, const std::string& key);
+    bool decryptFile(const std::string& inputFileName, const std::string& outputFileName, const std::string& key);
 };
 
 #endif // CIPHERBOX_H
