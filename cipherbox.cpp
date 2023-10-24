@@ -138,7 +138,7 @@ vector<unsigned char> Cipherbox::generateIV() {
     vector<unsigned char> iv(AES_BLOCK_SIZE);
     if (RAND_bytes(iv.data(), AES_BLOCK_SIZE) != 1) {
         cerr << "Error generating IV..." << endl;
-        // Handle the error appropriately
+        return 1;
     }
     return iv;
 }
