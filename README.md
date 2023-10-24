@@ -70,8 +70,3 @@ std::string outputFileName = // Output file name
 cipher.encryptFile(inputFileName, outputFileName, key); // To encrypt a file
 cipher.decryptFile(inputFileName, outputFileName, key); // To decrypt a file
 ```
-
-## License
-
-This library is open-source and released under the MIT License. See [LICENSE](LICENSE) for details.
-```
